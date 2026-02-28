@@ -9,7 +9,7 @@ When it comes to API spec and endpoints handlers, we have an Open API yaml file 
 What are your thoughts on the pros and cons of each approach? Which would you choose and why?
 
 **Answer:**
-```txt
+
 API Specification Approaches: OpenAPI YAML vs. Hand-Coded Endpoints
 
 OpenAPI (Generated Code):
@@ -26,14 +26,11 @@ Pros:
 - Faster initial development for simple or prototype services.
 - Full control over framework-specific annotations, validation logic, and routing.
 Cons:
-- High risk of documentation drift. It requires developer discipline to keep annotations (like @Operation) and descriptions in sync with code changes.
+- High risk of documentation drift. It requires developer significant efforts and descriptions in sync with code changes.
 - Slower cross-team collaboration, as frontend teams must wait for backend deployment or manually inspect the code to understand the final API structure.
 
 Recommendation:
 I would choose an API-First Design approach with OpenAPI. In a production environment, clear contracts and smooth cross-team collaboration are paramount. The ability to generate robust client SDKs and guarantee up-to-date documentation outweighs the upfront learning curve and setup time. Hand-coding is best reserved for quick prototyping or internal utilities.
-```
-
----
 
 ## Question 2: Testing Strategy
 
@@ -42,7 +39,6 @@ Given the need to balance thorough testing with time and resource constraints, h
 Which types of tests (unit, integration, parameterized, etc.) would you focus on, and how would you ensure test coverage remains effective over time?
 
 **Answer:**
-```txt
 Testing Strategy for Production Code
 
 Given constraints, prioritize tests based on their return on investment (ROI) in confidence and fast feedback.
@@ -61,4 +57,4 @@ Given constraints, prioritize tests based on their return on investment (ROI) in
 
 Ensuring Effective Coverage:
 To ensure effectiveness over time, avoid testing implementation details (like asserting that a repository method was called) in favor of asserting the final database state or the returned response. Maintain code coverage metrics as PR gatekeepers, ensuring new features come with Testcontainers coverage.
-```
+
