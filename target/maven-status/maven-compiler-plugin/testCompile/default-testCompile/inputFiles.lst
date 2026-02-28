@@ -8,6 +8,10 @@ D:\playground\hackathon-java-assignment\src\test\java\com\fulfilment\application
 D:\playground\hackathon-java-assignment\src\test\java\com\fulfilment\application\monolith\warehouses\adapters\WarehouseTestcontainersIT.java
 D:\playground\hackathon-java-assignment\src\test\java\com\fulfilment\application\monolith\warehouses\domain\usecases\ReplaceWarehouseUseCaseTest.java
 D:\playground\hackathon-java-assignment\src\test\java\com\fulfilment\application\monolith\warehouses\domain\WarehouseValidationTest.java
+D:\playground\hackathon-java-assignment\src\test\java\com\fulfilment\application\monolith\warehouses\adapters\database\WarehouseRepositoryTest.java
+D:\playground\hackathon-java-assignment\src\test\java\com\fulfilment\application\monolith\products\ProductResourceTest.java
 D:\playground\hackathon-java-assignment\src\test\java\com\fulfilment\application\monolith\warehouses\adapters\restapi\WarehouseEndpointIT.java
+D:\playground\hackathon-java-assignment\src\test\java\com\fulfilment\application\monolith\stores\StoreResourceTest.java
 D:\playground\hackathon-java-assignment\src\test\java\com\fulfilment\application\monolith\warehouses\adapters\WarehouseConcurrencyIT.java
 D:\playground\hackathon-java-assignment\src\test\java\com\fulfilment\application\monolith\products\ProductEndpointTest.java
+D:\playground\hackathon-java-assignment\src\test\java\com\fulfilment\application\monolith\warehouses\adapters\restapi\WarehouseResourceImplTest.java
