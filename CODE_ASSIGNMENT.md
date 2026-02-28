@@ -141,7 +141,15 @@ There are no fixed requirements here. Think about what a production-grade versio
 
 There are no wrong answers — we're interested in how you think and what you prioritise.
 
+## Note from my side:
+ here we can implement dropship functionality, Warehouse fulfillment involves storing inventory in a dedicated facility, whereas dropshipping skips storage, the seller passes orders to a supplier who ships directly to the customer.
+  Warehouse fulfillment offers faster shipping and control, while dropshipping minimizes upfront inventory costs 
 ---
+
+Inventory Ownership & Storage:
+
+Warehouse: You own, purchase, and store stock in a warehouse before it sells
+Dropshipping: You do not hold inventory. You buy products from a third-party manufacturer/wholesaler only after a customer buys them
 
 ## Deliverables
 
