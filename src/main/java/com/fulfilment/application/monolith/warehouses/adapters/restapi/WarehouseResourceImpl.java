@@ -16,14 +16,25 @@ import java.util.List;
 @RequestScoped
 public class WarehouseResourceImpl implements WarehouseResource {
 
-  @Inject private WarehouseRepository warehouseRepository;
-  @Inject private CreateWarehouseOperation createWarehouseOperation;
-  @Inject private ArchiveWarehouseOperation archiveWarehouseOperation;
-  @Inject private ReplaceWarehouseOperation replaceWarehouseOperation;
+  @Inject
+  private WarehouseRepository warehouseRepository;
+  @Inject
+  private CreateWarehouseOperation createWarehouseOperation;
+  @Inject
+  private ArchiveWarehouseOperation archiveWarehouseOperation;
+  @Inject
+  private ReplaceWarehouseOperation replaceWarehouseOperation;
 
   @Override
   public List<Warehouse> listAllWarehousesUnits() {
     return warehouseRepository.getAll().stream().map(this::toWarehouseResponse).toList();
+  }
+
+  @Override
+  public List<Warehouse> searchWarehouses(String location, Integer minCapacity, Integer maxCapacity, String sortBy,
+      String sortOrder, Integer page, Integer pageSize) {
+    var results = warehouseRepository.search(location, minCapacity, maxCapacity, sortBy, sortOrder, page, pageSize);
+    return results.stream().map(this::toWarehouseResponse).toList();
   }
 
   @Override
@@ -39,7 +50,7 @@ public class WarehouseResourceImpl implements WarehouseResource {
     try {
       // Create warehouse through use case (includes validations)
       createWarehouseOperation.create(domainWarehouse);
-      
+
       // Return the created warehouse
       return toWarehouseResponse(domainWarehouse);
     } catch (IllegalArgumentException e) {
@@ -51,11 +62,11 @@ public class WarehouseResourceImpl implements WarehouseResource {
   public Warehouse getAWarehouseUnitByID(String id) {
     // Find warehouse by business unit code
     var domainWarehouse = warehouseRepository.findByBusinessUnitCode(id);
-    
+
     if (domainWarehouse == null) {
       throw new WebApplicationException("Warehouse with business unit code '" + id + "' not found", 404);
     }
-    
+
     return toWarehouseResponse(domainWarehouse);
   }
 

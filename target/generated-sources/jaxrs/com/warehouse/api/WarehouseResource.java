@@ -4,11 +4,13 @@ import com.warehouse.api.beans.Warehouse;
 import jakarta.validation.constraints.NotNull;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DELETE;
+import jakarta.ws.rs.DefaultValue;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
 import java.util.List;
 
 /**
@@ -24,6 +26,16 @@ public interface WarehouseResource {
   @Produces("application/json")
   @Consumes("application/json")
   Warehouse createANewWarehouseUnit(@NotNull Warehouse data);
+
+  @Path("/search")
+  @GET
+  @Produces("application/json")
+  List<Warehouse> searchWarehouses(@QueryParam("location") String location,
+      @QueryParam("minCapacity") Integer minCapacity, @QueryParam("maxCapacity") Integer maxCapacity,
+      @QueryParam("sortBy") @DefaultValue("createdAt") String sortBy,
+      @QueryParam("sortOrder") @DefaultValue("asc") String sortOrder,
+      @QueryParam("page") @DefaultValue("0") Integer page,
+      @QueryParam("pageSize") @DefaultValue("10") Integer pageSize);
 
   @Path("/{id}")
   @GET
